@@ -1,0 +1,31 @@
+[Aug 2 04:53:30] 
+[Aug 2 04:53:30] ==DUPLICATOR INSTALLER BOOTSTRAP v1.5.13==
+[Aug 2 04:53:30] ----------------------------------------------------
+[Aug 2 04:53:30] Installer bootstrap start
+[Aug 2 04:53:30] Manual extract found so not going to extract dup-installer dir
+[Aug 2 04:53:30] EXTRACT dup-installer dir
+[Aug 2 04:53:30] Successfully deleted the file C:/xampp/htdocs/wonderlandvietnam/dup-installer/dup-installer-log__[HASH].txt
+[Aug 2 04:53:30] NOTICE: Didn't need to extract the installer.
+[Aug 2 04:53:30] Set permissions of dup-installer<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/addons<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/assets<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/classes<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/ctrls<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/favicon<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/libs<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/original_files_[HASH]<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/src<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/templates<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/vendor<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/dup-archive__[HASH].txt<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/dup-database__[HASH].sql<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/dup-installer-csrf__[HASH].txt<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/dup-installer-notices__[HASH].json<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/dup-params__[HASH].json<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/dup-scan__[HASH].json<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/dup-scanned-dirs__[HASH].txt<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/dup-scanned-files__[HASH].txt<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/index.php<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/main.installer.php<br/>
+[Aug 2 04:53:30] Set permissions of dup-installer/php_error__[HASH].log<br/>
+[Aug 2 04:53:30] DONE: No detected errors so redirecting to the main installer. Main Installer URI = http://host.local/dup-installer/main.installer.php

@@ -1,0 +1,64 @@
+{
+    "CL_-=_-=": "DUP_Extraction",
+    "zip_filetime": "current",
+    "archive_action": "donothing",
+    "archive_engine": "ziparchivechunking",
+    "extractonStart": 1754110530.338757,
+    "chunkStart": 1754110636.201562,
+    "root_path": "C:\/xampp\/htdocs\/wonderlandvietnam\/",
+    "archive_path": "C:\/xampp\/htdocs\/wonderlandvietnam\/20250721_wonderlandvietnamvn_6aa8ccc5a610c3dc5212_20250721094019_archive.zip",
+    "ajax1_error_level": 32767,
+    "dawn_status": null,
+    "archive_offset": 17084,
+    "do_chunking": false,
+    "chunkedExtractionCompleted": false,
+    "num_files": 18140,
+    "sub_folder_archive": "",
+    "max_size_extract_at_a_time": 2097152,
+    "zip_arc_chunk_notice_no": -1,
+    "zip_arc_chunk_notice_change_last_time": 0,
+    "zip_arc_chunks_extract_rates": [
+        1997491.753679882,
+        4815810.2685831515,
+        35943282.40982478,
+        18580730.983583357,
+        3417824.8933717846,
+        1542850.756043763,
+        1201437.6763538315,
+        824884.3683443292,
+        3794318.0724956356,
+        1717142.9820463846,
+        217569.56473302396,
+        1633672.8288588338,
+        1141948.231541143,
+        2258303.5894274283,
+        2295009.4485383155,
+        850115.71306773,
+        222629.01322946875,
+        2868658.3299897276
+    ],
+    "archive_items_count": 17534,
+    "filters": {
+        "CL_-=_-=": "Duplicator\\Installer\\Core\\Deploy\\Files\\Filters",
+        "files": [
+            "20250721_wonderlandvietnamvn_6aa8ccc5a610c3dc5212_20250721094019_installer-backup.php"
+        ],
+        "dirsWithoutChilds": [],
+        "dirs": [
+            "dup-installer"
+        ]
+    },
+    "removeFilters": {
+        "CL_-=_-=": "Duplicator\\Installer\\Core\\Deploy\\Files\\Filters",
+        "files": [
+            "C:\/xampp\/htdocs\/wonderlandvietnam\/20250721_wonderlandvietnamvn_6aa8ccc5a610c3dc5212_20250721094019_installer-backup.php",
+            "C:\/xampp\/htdocs\/wonderlandvietnam\/20250721_wonderlandvietnamvn_6aa8ccc5a610c3dc5212_20250721094019_archive.zip",
+            "C:\/xampp\/htdocs\/wonderlandvietnam\/installer - 2025-07-21T164103.394.php",
+            "C:\/xampp\/htdocs\/wonderlandvietnam\/dup-installer-bootlog__a42e1bf-21094019.txt"
+        ],
+        "dirsWithoutChilds": [],
+        "dirs": [
+            "C:\/xampp\/htdocs\/wonderlandvietnam\/dup-installer"
+        ]
+    }
+}
