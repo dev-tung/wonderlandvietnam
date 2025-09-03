@@ -1,6 +1,6 @@
 <div class="row category-page-row border-top">
   <div class="col large-12">
-    <form id="custom-search-form" role="search" method="get" class="wl-search-form" action="https://oneoffice.vn/van-phong-ha-noi/">
+    <form id="custom-search-form" role="search" method="get" class="wl-search-form" action="<?php echo get_term_link( get_queried_object_id() ); ?>">
       <div class="row">
         <!-- Ô tìm kiếm -->
         <div class="col large-4 small-12">
@@ -147,14 +147,15 @@
     <div class="shop-container">
       <section class="SectionBuilding">
         <div class="SectionBuildingHeader">
-          <h3 class="SectionBuildingTitle">Cho thuê văn phòng Hà Nội</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos laborum quidem veniam maxime amet sequi, eos error odit repellendus minus!</p>
+          <h3 class="SectionBuildingTitle">Cho thuê <?php echo $officePage->name; ?></h3>
+          <p>Nhận được ngay báo giá, thông tin chi tiết của hàng ngàn toà nhà văn phòng lớn nhỏ. Với dịch vụ tư vấn của Wonderland, bạn sẽ không lo bỏ lỡ những văn phòng đẹp, phù hợp nhất với mức giá tốt nhất. Ngoài ra, thông tin tư vấn chuyên sâu của chúng tôi sẽ mang lại cho bạn cái nhìn toàn cảnh, chi tiết, công bằng mà không dễ có được sau một vài lần ghé thăm toà nhà hoặc được chia sẻ từ phía bên cho thuê.</p>
         </div>
 
         <div class="row">
           <div class="col">
-            <a class="SectionBuildingTag" href="#">Hoàn Kiếm</a>
-            <a class="SectionBuildingTag" href="#">Hai Bà Trưng</a>
+            <?php foreach ($offices as $office) : ?>
+                <a class="SectionBuildingTag" href="<?php echo esc_html($office->slug); ?>"><?php echo esc_html($office->name); ?></a> 
+            <?php endforeach; ?>
           </div>
         </div>
 

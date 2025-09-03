@@ -5,7 +5,10 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 require_once __DIR__ . '/helpers.php';
+
+require_once __DIR__ . '/controllers/Controller.php';
 require_once __DIR__ . '/controllers/OfficeController.php';
+
 require_once __DIR__ . '/models/OfficeModel.php';
 
 function officesearch_init() {

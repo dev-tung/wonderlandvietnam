@@ -3,18 +3,25 @@ namespace Office\Controllers;
 
 use Office\Models\OfficeModel;
 
-class OfficeController {
+class OfficeController extends Controller {
+
+    private $model;
+
+    public function __construct() {
+        $this->model = new OfficeModel();
+    }
+
     public function register_hooks() {
-        // Tạo shortcode để test
         add_shortcode('offices_search', [$this, 'render_offices']);
     }
 
     public function render_offices() {
-        $model = new OfficeModel();
-        $categories = $model->get_categories();
+        $officePage = $this->model->officePage();
+        $offices = $this->model->offices();
 
-        ob_start();
-        include __DIR__ . '/../views/office-list.php';
-        return ob_get_clean();
+        return $this->render('office-list', [
+            'officePage' => $this->model->officePage(),
+            'offices' => $this->model->offices()
+        ]);
     }
 }
