@@ -32,23 +32,12 @@
                 <div class="selected-items" id="selected-quan-items"></div>
 
                 <div class="dropdown-options">
-                  <div class="dropdown-option" data-value="ba-dinh">
-                    <input type="checkbox" id="quan_ba-dinh" value="ba-dinh">
-                    <label for="quan_ba-dinh">Ba Đình</label>
-                  </div>
-                  <div class="dropdown-option" data-value="cau-giay">
-                    <input type="checkbox" id="quan_cau-giay" value="cau-giay">
-                    <label for="quan_cau-giay">Cầu Giấy</label>
-                  </div>
-                  <div class="dropdown-option" data-value="dong-da">
-                    <input type="checkbox" id="quan_dong-da" value="dong-da">
-                    <label for="quan_dong-da">Đống Đa</label>
-                  </div>
-                  <div class="dropdown-option" data-value="hoan-kiem">
-                    <input type="checkbox" id="quan_hoan-kiem" value="hoan-kiem">
-                    <label for="quan_hoan-kiem">Hoàn Kiếm</label>
-                  </div>
-
+                  <?php foreach ($buildingQuans as $buildingQuan) : ?>
+                      <div class="dropdown-option" data-value="<?php echo esc_html($buildingQuan->slug); ?>">
+                        <input type="checkbox" id="quan_<?php echo esc_html($buildingQuan->slug); ?>" value="<?php echo esc_html($buildingQuan->slug); ?>">
+                        <label for="quan_<?php echo esc_html($buildingQuan->slug); ?>"><?php echo esc_html($buildingQuan->name); ?></label>
+                      </div>
+                  <?php endforeach; ?>
                   <input type="hidden" id="current-quan-input" name="filter_quan-ha-noi" value="">
                 </div>
               </div>
@@ -147,14 +136,14 @@
     <div class="shop-container">
       <section class="SectionBuilding">
         <div class="SectionBuildingHeader">
-          <h3 class="SectionBuildingTitle">Cho thuê <?php echo $officePage->name; ?></h3>
+          <h3 class="SectionBuildingTitle">Cho thuê <?php echo $buildingPage->name; ?></h3>
           <p>Nhận được ngay báo giá, thông tin chi tiết của hàng ngàn toà nhà văn phòng lớn nhỏ. Với dịch vụ tư vấn của Wonderland, bạn sẽ không lo bỏ lỡ những văn phòng đẹp, phù hợp nhất với mức giá tốt nhất. Ngoài ra, thông tin tư vấn chuyên sâu của chúng tôi sẽ mang lại cho bạn cái nhìn toàn cảnh, chi tiết, công bằng mà không dễ có được sau một vài lần ghé thăm toà nhà hoặc được chia sẻ từ phía bên cho thuê.</p>
         </div>
 
         <div class="row">
           <div class="col">
-            <?php foreach ($offices as $office) : ?>
-                <a class="SectionBuildingTag" href="<?php echo esc_html($office->slug); ?>"><?php echo esc_html($office->name); ?></a> 
+            <?php foreach ($buildingQuans as $buildingQuan) : ?>
+                <a class="SectionBuildingTag" href="<?php echo esc_html($buildingQuan->slug); ?>"><?php echo esc_html($buildingQuan->name); ?></a> 
             <?php endforeach; ?>
           </div>
         </div>

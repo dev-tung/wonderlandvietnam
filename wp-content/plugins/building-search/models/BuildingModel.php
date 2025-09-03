@@ -1,13 +1,13 @@
 <?php
-namespace Office\Models;
+namespace Building\Models;
 
-class OfficeModel {
-    public function officePage() {
+class BuildingModel {
+    public function buildingPage() {
         $term_id = get_queried_object_id(); 
         return $term_id ? get_term($term_id, 'product_cat') : null;
     }
 
-    public function offices($hide_empty = false) {
+    public function buildingQuans($hide_empty = false) {
         $terms = get_terms([
             'taxonomy'   => 'pa_quan-ha-noi',
             'hide_empty' => $hide_empty,

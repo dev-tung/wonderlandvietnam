@@ -1,5 +1,5 @@
 <?php
-namespace Office\Controllers;
+namespace Building\Controllers;
 
 class Controller {
     /**
