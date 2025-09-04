@@ -24,20 +24,22 @@ class BuildingModel {
         $buildings = [];
 
         foreach ($quans as $quan) {
-            $buildings[$quan->term_id]['quan']      = $quan;
-            $buildings[$quan->term_id]['buildings'] = get_posts(
-                [
-                    'post_type'      => 'product',
-                    'posts_per_page' => -1,
-                    'tax_query'      => [
-                        [
-                            'taxonomy'   => $this->taxonomyQuan($taxonomy),
-                            'field'    => 'term_id',
-                            'terms'    => $quan->term_id,
+            $buildings[$quan->term_id] = [
+                'quan'      => $quan,
+                'buildings' => get_posts(
+                    [
+                        'post_type'      => 'product',
+                        'posts_per_page' => 4,
+                        'tax_query'      => [
+                            [
+                                'taxonomy'   => $this->taxonomyQuan($taxonomy),
+                                'field'    => 'term_id',
+                                'terms'    => $quan->term_id,
+                            ],
                         ],
-                    ],
-                ]
-            );
+                    ]
+                )
+            ];
         }  
 
         return $buildings;

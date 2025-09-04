@@ -141,7 +141,7 @@
         </div>
 
         <div class="row">
-          <div class="col">
+          <div class="col SectionBuildingTagList">
             <?php foreach ($quans as $quan) : ?>
                 <a class="SectionBuildingTag" href="<?php echo esc_html($quan->slug); ?>"><?php echo esc_html($quan->name); ?></a> 
             <?php endforeach; ?>
@@ -149,42 +149,41 @@
         </div>
 
         <?php foreach($buildingsQuan as $buildingQuan) : ?>
-            <h4 class="BuildingQuanTitle">Cho thuê văn phòng quận <?php echo esc_html($buildingQuan['quan']->name); ?></h4>
+          <?php if (!empty($buildingQuan['buildings'])) : ?>
+            <div class="BuildingQuanHeader">
+              <h4 class="BuildingQuanTitle">Cho thuê văn phòng quận <?php echo esc_html($buildingQuan['quan']->name); ?></h4>
+              <a class="BuildingQuanLink" href="<?php echo esc_html($buildingQuan['quan']->slug); ?>" > Xem thêm</a>
+            </div>
             <div class="row list-building">
-                <?php if (!empty($buildingQuan['buildings'])) : ?>
-                    <?php foreach ($buildingQuan['buildings'] as $building) : ?>
-                        <div class="col large-3 small-12 pb-0">
-                            <div class="building-item">
-                                <div class="thumb">
-                                    <a href="<?php echo get_permalink($building->ID); ?>" title="<?php echo get_the_title($building->ID); ?>">
-                                        <?php echo get_the_post_thumbnail($building->ID, 'medium', ['class' => 'img-responsive thumb-blog', 'alt' => get_the_title($building->ID)]); ?>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h3>
-                                        <a class="BuildingItemName" href="<?php echo get_permalink($building->ID); ?>" title="<?php echo get_the_title($building->ID); ?>"><?php echo get_the_title($building->ID); ?></a>
-                                    </h3>
-                                    <span class="BuildingItemLocation"><?php echo get_post_meta($building->ID, '_vi_tri', true); ?></span>
-                                    <div class="meta">
-                                        <span class="price"><?php echo get_post_meta($building->ID, '_price', true); ?></span>
-                                        <span class="btn-care quan_tam js-btn-care" type="button" data-id="<?php echo $building->ID; ?>">
-                                            <span>
-                                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                                            </span> 
-                                            Quan tâm 
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <div class="col large-12 small-12">
-                        <span>Hiện chưa có sản phẩn trong danh mục này!</span>
-                    </div>
-                <?php endif; ?>
+              <?php foreach ($buildingQuan['buildings'] as $building) : ?>
+                  <div class="col large-3 small-12 pb-0">
+                      <div class="building-item">
+                          <div class="thumb">
+                              <a href="<?php echo get_permalink($building->ID); ?>" title="<?php echo get_the_title($building->ID); ?>">
+                                  <?php echo get_the_post_thumbnail($building->ID, 'medium', ['class' => 'img-responsive thumb-blog', 'alt' => get_the_title($building->ID)]); ?>
+                              </a>
+                          </div>
+                          <div class="content BuildingItemContent">
+                              <h3>
+                                  <a class="BuildingItemName" href="<?php echo get_permalink($building->ID); ?>" title="<?php echo get_the_title($building->ID); ?>"><?php echo get_the_title($building->ID); ?></a>
+                              </h3>
+                              <span class="BuildingItemLocation"><?php echo get_post_meta($building->ID, '_vi_tri', true); ?></span>
+                              <div class="meta">
+                                  <span class="price"><?php echo get_post_meta($building->ID, '_gia_hien_thi', true); ?></span>
+                                  <span class="btn-care quan_tam js-btn-care BuildingItemCare" type="button" data-id="<?php echo $building->ID; ?>">
+                                      <span>
+                                          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                      </span> 
+                                      Quan tâm 
+                                  </span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              <?php endforeach; ?>
             </div> <!-- End list-building -->
+          <?php endif; ?>
         <?php endforeach; ?>
 
         

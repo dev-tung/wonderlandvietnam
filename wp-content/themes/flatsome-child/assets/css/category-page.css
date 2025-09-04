@@ -869,12 +869,13 @@
 
 .SectionBuildingTag{
     border: 1px solid #ddd;
-    padding: 7px;
+    padding: 3px 7px;
     border-radius: 15px;
     color: black;
     cursor: pointer;
-    display: inline;
+    display: inline-block;
     margin-right: 15px;
+    margin-bottom: 15px;
 }
 
 .BuildingItemName{
@@ -898,6 +899,37 @@
 .BuildingQuanTitle{
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 20px;
     color: #272b48;
+    width: fit-content;
+}
+
+@media (max-width: 768px) {
+    .BuildingQuanTitle{
+        font-size: 14px;
+    }
+}
+
+.BuildingQuanHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.BuildingQuanLink{
+    display: block;
+    color: #272b48;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 13px;
+}    
+
+@media (max-width: 768px) {
+    .BuildingQuanLink{
+        font-size: 12px;
+    }
+}
+
+.BuildingItemContent .BuildingItemCare{
+    background-color: #e6e6e6;
 }
