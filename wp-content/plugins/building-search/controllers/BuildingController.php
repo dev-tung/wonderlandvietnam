@@ -17,14 +17,14 @@ class BuildingController extends Controller {
     }
 
     public function buildingsQuan() {
-        $page   = $this->model->page();
-        $quans  = $this->model->quans($page->slug);
-        $data   = $this->model->buildings($page->slug, $quans);
+        $page          = $this->model->page();
+        $quans         = $this->model->quans($page->slug);
+        $buildingsQuan = $this->model->buildingsQuan($page->slug, $quans);
 
         return $this->render('building-quan', [
             'page'  => $page,
             'quans' => $quans,
-            'data'  => $data
+            'buildingsQuan' => $buildingsQuan
         ]);
     }
 

@@ -12,10 +12,10 @@
                   <path d="M12 20.5C16.4183 20.5 20 16.9183 20 12.5C20 8.08172 16.4183 4.5 12 4.5C7.58172 4.5 4 8.08172 4 12.5C4 16.9183 7.58172 20.5 12 20.5Z" stroke="#222531" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="square"></path>
                 </svg>
               </span>
-              <input type="search" id="search-field" class="form-control" name="s" placeholder="Tìm theo tên tòa nhà, tên đường..." value="">
+              <input type="search" id="search-field" class="form-control" name="s" placeholder="Tìm theo tên tòa nhà, tên đường..." value="<?php echo $_GET['s']; ?>">
             </div>
             <input type="hidden" name="post_type" value="product">
-            <input type="hidden" name="product_cat" value="<?php echo $page->slug; ?>">
+            <input type="hidden" name="product_cat" value="<?php echo $_GET['product_cat']; ?>">
           </div>
         </div>
         <!-- Dropdown Quận -->
@@ -135,7 +135,7 @@
     </form>
     <div class="shop-container">
       <section class="SectionBuilding">
-        <h3 class="SectionBuildingTitle">Có 8 tòa nhà phù hợp với nhu cầu của bạn</h3>
+        <h3 class="SectionBuildingTitle">Có <?php echo count($buildings); ?> tòa nhà phù hợp với nhu cầu của bạn</h3>
         <div class="row list-building">
           <?php foreach ($buildings as $building) : ?>
               <div class="col large-3 small-12 pb-0">
