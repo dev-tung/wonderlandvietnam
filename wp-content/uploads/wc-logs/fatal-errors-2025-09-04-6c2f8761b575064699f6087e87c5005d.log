@@ -1,0 +1,90 @@
+2025-09-04T08:19:40+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php:3
+Stack trace:
+#0 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\Controller.php(18): include()
+#1 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php(27): Building\Controllers\Controller->render('Building-list', Array)
+#2 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(393): Building\Controllers\BuildingController->renderBuildings('', '', 'buildings_searc...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(265): preg_replace_callback('/\\[(\\[?)(buildi...', 'do_shortcode_ta...', '[buildings_sear...')
+#5 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(1): do_shortcode('[buildings_sear...')
+#6 C:\xampp\htdocs\wonderlandvietnam\wp-in in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php on line 3
+
+2025-09-04T08:19:53+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php:3
+Stack trace:
+#0 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\Controller.php(18): include()
+#1 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php(27): Building\Controllers\Controller->render('Building-list', Array)
+#2 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(393): Building\Controllers\BuildingController->renderBuildings('', '', 'buildings_searc...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(265): preg_replace_callback('/\\[(\\[?)(buildi...', 'do_shortcode_ta...', '[buildings_sear...')
+#5 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(1): do_shortcode('[buildings_sear...')
+#6 C:\xampp\htdocs\wonderlandvietnam\wp-in in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php on line 3
+
+2025-09-04T08:20:02+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php:3
+Stack trace:
+#0 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\Controller.php(18): include()
+#1 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php(27): Building\Controllers\Controller->render('Building-list', Array)
+#2 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(393): Building\Controllers\BuildingController->renderBuildings('', '', 'buildings_searc...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(265): preg_replace_callback('/\\[(\\[?)(buildi...', 'do_shortcode_ta...', '[buildings_sear...')
+#5 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(1): do_shortcode('[buildings_sear...')
+#6 C:\xampp\htdocs\wonderlandvietnam\wp-in in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php on line 3
+
+2025-09-04T08:20:28+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php:3
+Stack trace:
+#0 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\Controller.php(18): include()
+#1 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php(27): Building\Controllers\Controller->render('Building-list', Array)
+#2 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(393): Building\Controllers\BuildingController->renderBuildings('', '', 'buildings_searc...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(265): preg_replace_callback('/\\[(\\[?)(buildi...', 'do_shortcode_ta...', '[buildings_sear...')
+#5 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(1): do_shortcode('[buildings_sear...')
+#6 C:\xampp\htdocs\wonderlandvietnam\wp-in in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php on line 3
+
+2025-09-04T08:21:18+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php:3
+Stack trace:
+#0 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\Controller.php(18): include()
+#1 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php(27): Building\Controllers\Controller->render('Building-list', Array)
+#2 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(393): Building\Controllers\BuildingController->renderBuildings('', '', 'buildings_searc...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(265): preg_replace_callback('/\\[(\\[?)(buildi...', 'do_shortcode_ta...', '[buildings_sear...')
+#5 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(1): do_shortcode('[buildings_sear...')
+#6 C:\xampp\htdocs\wonderlandvietnam\wp-in in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php on line 3
+
+2025-09-04T08:21:33+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php:3
+Stack trace:
+#0 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\Controller.php(18): include()
+#1 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php(27): Building\Controllers\Controller->render('Building-list', Array)
+#2 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(393): Building\Controllers\BuildingController->renderBuildings('', '', 'buildings_searc...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(265): preg_replace_callback('/\\[(\\[?)(buildi...', 'do_shortcode_ta...', '[buildings_sear...')
+#5 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(1): do_shortcode('[buildings_sear...')
+#6 C:\xampp\htdocs\wonderlandvietnam\wp-in in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php on line 3
+
+2025-09-04T08:23:13+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php:3
+Stack trace:
+#0 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\Controller.php(18): include()
+#1 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php(27): Building\Controllers\Controller->render('Building-list', Array)
+#2 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(393): Building\Controllers\BuildingController->renderBuildings('', '', 'buildings_searc...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(265): preg_replace_callback('/\\[(\\[?)(buildi...', 'do_shortcode_ta...', '[buildings_sear...')
+#5 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(1): do_shortcode('[buildings_sear...')
+#6 C:\xampp\htdocs\wonderlandvietnam\wp-in in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php on line 3
+
+2025-09-04T08:23:21+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php:3
+Stack trace:
+#0 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\Controller.php(18): include()
+#1 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php(27): Building\Controllers\Controller->render('Building-list', Array)
+#2 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(393): Building\Controllers\BuildingController->renderBuildings('', '', 'buildings_searc...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(265): preg_replace_callback('/\\[(\\[?)(buildi...', 'do_shortcode_ta...', '[buildings_sear...')
+#5 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(1): do_shortcode('[buildings_sear...')
+#6 C:\xampp\htdocs\wonderlandvietnam\wp-in in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-list.php on line 3
+
+2025-09-04T08:45:05+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Term as array in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-quan.php:152
+Stack trace:
+#0 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\Controller.php(18): include()
+#1 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php(27): Building\Controllers\Controller->render('building-quan', Array)
+#2 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(393): Building\Controllers\BuildingController->buildingsQuan('', '', 'buildings_searc...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(265): preg_replace_callback('/\\[(\\[?)(buildi...', 'do_shortcode_ta...', '[buildings_sear...')
+#5 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(1): do_shortcode('[buildings_sear...')
+#6 C:\xampp\htdocs\wonderlandvietnam\wp-includes\template in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\views\building-quan.php on line 152
+

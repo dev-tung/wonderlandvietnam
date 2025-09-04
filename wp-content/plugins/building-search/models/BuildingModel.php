@@ -21,10 +21,10 @@ class BuildingModel {
     }
 
     public function buildingsQuan($taxonomy, $quans) {
-        $buildings = [];
+        $response = [];
 
         foreach ($quans as $quan) {
-            $buildings[$quan->term_id] = [
+            $response[$quan->term_id] = [
                 'quan'      => $quan,
                 'buildings' => get_posts(
                     [
@@ -42,6 +42,23 @@ class BuildingModel {
             ];
         }  
 
-        return $buildings;
+        return $response;
+    }
+
+    public function buildings() {
+        $args = [
+            'post_type'      => 'product',
+            'posts_per_page' => -1,
+            's'              => isset($_GET['s']) ? sanitize_text_field($_GET['s']) : '',
+            'tax_query'      => [
+                [
+                    'taxonomy' => 'product_cat',
+                    'field'    => 'slug',
+                    'terms'    => isset($_GET['product_cat']) ? sanitize_text_field($_GET['product_cat']) : '',
+                ],
+            ],
+        ];
+        
+        return get_posts($args);
     }
 }

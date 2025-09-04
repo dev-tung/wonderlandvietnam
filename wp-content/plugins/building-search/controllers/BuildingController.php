@@ -12,19 +12,27 @@ class BuildingController extends Controller {
     }
 
     public function register_hooks() {
-        add_shortcode('buildings_search', [$this, 'renderBuildings']);
+        $render = ( !empty($_GET) ) ? 'buildingsResult' : 'buildingsQuan';
+        add_shortcode('buildings_search', [$this, $render]);
     }
 
-    public function renderBuildings() {
-        $page          = $this->model->page();
-        $quans         = $this->model->quans($page->slug);
-        $buildingsQuan = $this->model->buildingsQuan($page->slug, $quans);
-        // dd($buildingsQuan);
+    public function buildingsQuan() {
+        $page   = $this->model->page();
+        $quans  = $this->model->quans($page->slug);
+        $data   = $this->model->buildings($page->slug, $quans);
 
-        return $this->render('Building-list', [
+        return $this->render('building-quan', [
             'page'  => $page,
             'quans' => $quans,
-            'buildingsQuan' => $buildingsQuan
+            'data'  => $data
+        ]);
+    }
+
+    public function buildingsResult() {
+        $buildings = $this->model->buildings();
+
+        return $this->render('building-result', [
+            'buildings' => $buildings
         ]);
     }
 }
