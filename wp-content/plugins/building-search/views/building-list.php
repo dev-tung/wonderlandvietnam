@@ -32,10 +32,10 @@
                 <div class="selected-items" id="selected-quan-items"></div>
 
                 <div class="dropdown-options">
-                  <?php foreach ($buildingQuans as $buildingQuan) : ?>
-                      <div class="dropdown-option" data-value="<?php echo esc_html($buildingQuan->slug); ?>">
-                        <input type="checkbox" id="quan_<?php echo esc_html($buildingQuan->slug); ?>" value="<?php echo esc_html($buildingQuan->slug); ?>">
-                        <label for="quan_<?php echo esc_html($buildingQuan->slug); ?>"><?php echo esc_html($buildingQuan->name); ?></label>
+                  <?php foreach ($quans as $quan) : ?>
+                      <div class="dropdown-option" data-value="<?php echo esc_html($quan->slug); ?>">
+                        <input type="checkbox" id="quan_<?php echo esc_html($quan->slug); ?>" value="<?php echo esc_html($quan->slug); ?>">
+                        <label for="quan_<?php echo esc_html($quan->slug); ?>"><?php echo esc_html($quan->name); ?></label>
                       </div>
                   <?php endforeach; ?>
                   <input type="hidden" id="current-quan-input" name="filter_quan-ha-noi" value="">
@@ -136,19 +136,59 @@
     <div class="shop-container">
       <section class="SectionBuilding">
         <div class="SectionBuildingHeader">
-          <h3 class="SectionBuildingTitle">Cho thuê <?php echo $buildingPage->name; ?></h3>
+          <h3 class="SectionBuildingTitle">Cho thuê <?php echo $page->name; ?></h3>
           <p>Nhận được ngay báo giá, thông tin chi tiết của hàng ngàn toà nhà văn phòng lớn nhỏ. Với dịch vụ tư vấn của Wonderland, bạn sẽ không lo bỏ lỡ những văn phòng đẹp, phù hợp nhất với mức giá tốt nhất. Ngoài ra, thông tin tư vấn chuyên sâu của chúng tôi sẽ mang lại cho bạn cái nhìn toàn cảnh, chi tiết, công bằng mà không dễ có được sau một vài lần ghé thăm toà nhà hoặc được chia sẻ từ phía bên cho thuê.</p>
         </div>
 
         <div class="row">
           <div class="col">
-            <?php foreach ($buildingQuans as $buildingQuan) : ?>
-                <a class="SectionBuildingTag" href="<?php echo esc_html($buildingQuan->slug); ?>"><?php echo esc_html($buildingQuan->name); ?></a> 
+            <?php foreach ($quans as $quan) : ?>
+                <a class="SectionBuildingTag" href="<?php echo esc_html($quan->slug); ?>"><?php echo esc_html($quan->name); ?></a> 
             <?php endforeach; ?>
           </div>
         </div>
 
-        <div class="row">
+        <?php foreach($buildingsQuan as $buildingQuan) : ?>
+            <h4 class="BuildingQuanTitle">Cho thuê văn phòng quận <?php echo esc_html($buildingQuan['quan']->name); ?></h4>
+            <div class="row list-building">
+                <?php if (!empty($buildingQuan['buildings'])) : ?>
+                    <?php foreach ($buildingQuan['buildings'] as $building) : ?>
+                        <div class="col large-3 small-12 pb-0">
+                            <div class="building-item">
+                                <div class="thumb">
+                                    <a href="<?php echo get_permalink($building->ID); ?>" title="<?php echo get_the_title($building->ID); ?>">
+                                        <?php echo get_the_post_thumbnail($building->ID, 'medium', ['class' => 'img-responsive thumb-blog', 'alt' => get_the_title($building->ID)]); ?>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h3>
+                                        <a class="BuildingItemName" href="<?php echo get_permalink($building->ID); ?>" title="<?php echo get_the_title($building->ID); ?>"><?php echo get_the_title($building->ID); ?></a>
+                                    </h3>
+                                    <span class="BuildingItemLocation"><?php echo get_post_meta($building->ID, '_vi_tri', true); ?></span>
+                                    <div class="meta">
+                                        <span class="price"><?php echo get_post_meta($building->ID, '_price', true); ?></span>
+                                        <span class="btn-care quan_tam js-btn-care" type="button" data-id="<?php echo $building->ID; ?>">
+                                            <span>
+                                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                            </span> 
+                                            Quan tâm 
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="col large-12 small-12">
+                        <span>Hiện chưa có sản phẩn trong danh mục này!</span>
+                    </div>
+                <?php endif; ?>
+            </div> <!-- End list-building -->
+        <?php endforeach; ?>
+
+        
+        <!-- <div class="row">
           <div class="col large-3 small-12 pb-0">
             <div class="building-item">
               <div class="thumb">
@@ -356,13 +396,14 @@
               </div>
             </div>
           </div>
-        </div> <!-- End list-building -->
+        </div>  -->
+        <!-- End list-building -->
         
-        <div class="row">
+        <!-- <div class="row">
           <div class="col large-12 small-12">
             <span>Hiện chưa có sản phẩn trong danh mục này!</span>
           </div>
-        </div>
+        </div> -->
       </section>
     </div>
     <!-- shop container -->

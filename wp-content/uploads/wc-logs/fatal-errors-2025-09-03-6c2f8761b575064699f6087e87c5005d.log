@@ -18,3 +18,19 @@ Stack trace:
 #5 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('C:\\xampp\\htdocs...', false)
 #6 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome\woocommerce\ in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\office-search\controllers\OfficeController.php on line 19
 
+2025-09-03T23:39:53+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function Building\Models\BuildingModel::buildingQuans(), 1 passed in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php on line 20 and exactly 2 expected in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\models\BuildingModel.php:9
+Stack trace:
+#0 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php(20): Building\Models\BuildingModel->buildingQuans('ho-chi-minh')
+#1 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(393): Building\Controllers\BuildingController->renderBuildings('', '', 'buildings_searc...')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(265): preg_replace_callback('/\\[(\\[?)(buildi...', 'do_shortcode_ta...', '[buildings_sear...')
+#4 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(1): do_shortcod in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\models\BuildingModel.php on line 9
+
+2025-09-03T23:40:15+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function Building\Models\BuildingModel::buildingQuans(), 0 passed in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php on line 24 and at least 1 expected in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\models\BuildingModel.php:9
+Stack trace:
+#0 C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\controllers\BuildingController.php(24): Building\Models\BuildingModel->buildingQuans()
+#1 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(393): Building\Controllers\BuildingController->renderBuildings('', '', 'buildings_searc...')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 C:\xampp\htdocs\wonderlandvietnam\wp-includes\shortcodes.php(265): preg_replace_callback('/\\[(\\[?)(buildi...', 'do_shortcode_ta...', '[buildings_sear...')
+#4 C:\xampp\htdocs\wonderlandvietnam\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(1): do_shortcode('[building in C:\xampp\htdocs\wonderlandvietnam\wp-content\plugins\building-search\models\BuildingModel.php on line 9
+

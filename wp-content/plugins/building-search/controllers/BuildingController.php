@@ -16,12 +16,15 @@ class BuildingController extends Controller {
     }
 
     public function renderBuildings() {
-        $buildingPage = $this->model->buildingPage();
-        $buildingQuans = $this->model->buildingQuans();
+        $page          = $this->model->page();
+        $quans         = $this->model->quans($page->slug);
+        $buildingsQuan = $this->model->buildingsQuan($page->slug, $quans);
+        // dd($buildingsQuan);
 
         return $this->render('Building-list', [
-            'buildingPage' => $this->model->buildingPage(),
-            'buildingQuans' => $this->model->buildingQuans()
+            'page'  => $page,
+            'quans' => $quans,
+            'buildingsQuan' => $buildingsQuan
         ]);
     }
 }

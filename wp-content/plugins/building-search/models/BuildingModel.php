@@ -2,17 +2,44 @@
 namespace Building\Models;
 
 class BuildingModel {
-    public function buildingPage() {
-        $term_id = get_queried_object_id(); 
-        return $term_id ? get_term($term_id, 'product_cat') : null;
+
+    public function taxonomyQuan( $taxonomy ){
+        return 'pa_quan-' . $taxonomy;
     }
 
-    public function buildingQuans($hide_empty = false) {
+    public function page() {
+        return get_term(get_queried_object_id(), 'product_cat');
+    }
+
+    public function quans($taxonomy, $hide_empty = false) {
         $terms = get_terms([
-            'taxonomy'   => 'pa_quan-ha-noi',
+            'taxonomy'   => $this->taxonomyQuan($taxonomy),
             'hide_empty' => $hide_empty,
         ]);
 
         return !is_wp_error($terms) ? $terms : [];
+    }
+
+    public function buildingsQuan($taxonomy, $quans) {
+        $buildings = [];
+
+        foreach ($quans as $quan) {
+            $buildings[$quan->term_id]['quan']      = $quan;
+            $buildings[$quan->term_id]['buildings'] = get_posts(
+                [
+                    'post_type'      => 'product',
+                    'posts_per_page' => -1,
+                    'tax_query'      => [
+                        [
+                            'taxonomy'   => $this->taxonomyQuan($taxonomy),
+                            'field'    => 'term_id',
+                            'terms'    => $quan->term_id,
+                        ],
+                    ],
+                ]
+            );
+        }  
+
+        return $buildings;
     }
 }
