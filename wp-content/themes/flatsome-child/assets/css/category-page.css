@@ -96,6 +96,10 @@
     text-align: left;
 }
 
+.dropdown-menu {
+    min-width: 200px;
+}
+
 /* Custom Dropdown Base Styles */
 .custom-dropdown-wrapper,
 .price-dropdown-wrapper {

@@ -12,33 +12,43 @@
                   <path d="M12 20.5C16.4183 20.5 20 16.9183 20 12.5C20 8.08172 16.4183 4.5 12 4.5C7.58172 4.5 4 8.08172 4 12.5C4 16.9183 7.58172 20.5 12 20.5Z" stroke="#222531" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="square"></path>
                 </svg>
               </span>
-              <input type="search" id="search-field" class="form-control" name="s" placeholder="Tìm theo tên tòa nhà, tên đường..." value="<?php echo $_GET['s']; ?>">
+              <input type="search" id="search-field" class="form-control" name="s" placeholder="Tìm theo tên tòa nhà, tên đường..." value="<?php echo get_search_query(); ?>">
             </div>
             <input type="hidden" name="post_type" value="product">
-            <input type="hidden" name="product_cat" value="<?php echo $_GET['product_cat']; ?>">
           </div>
         </div>
+
         <!-- Dropdown Quận -->
         <div class="col large-2 small-12">
           <div class="custom-dropdown-wrapper">
             <div class="dropdown-label">Quận</div>
             <div class="custom-dropdown" id="quan-dropdown">
               <div class="dropdown-display" id="quan-display">
-                <span class="selected-count">(0) đã chọn</span>
+                <span class="selected-count">(<?php echo count($selectedQuans); ?>) đã chọn</span>
                 <i class="fa fa-chevron-down dropdown-arrow"></i>
               </div>
               <div class="dropdown-menu" id="quan-menu" style="display:none;">
-                <!-- Nơi hiện tag đã chọn -->
                 <div class="selected-items" id="selected-quan-items"></div>
 
                 <div class="dropdown-options">
                   <?php foreach ($quans as $quan) : ?>
-                      <div class="dropdown-option" data-value="<?php echo esc_html($quan->slug); ?>">
-                        <input type="checkbox" id="quan_<?php echo esc_html($quan->slug); ?>" value="<?php echo esc_html($quan->slug); ?>">
-                        <label for="quan_<?php echo esc_html($quan->slug); ?>"><?php echo esc_html($quan->name); ?></label>
-                      </div>
+                    <?php $isChecked = in_array($quan->slug, $selectedQuans, true); ?>
+                    <div class="dropdown-option" data-value="<?php echo esc_html($quan->slug); ?>">
+                      <input type="checkbox"
+                            id="quan_<?php echo esc_html($quan->slug); ?>"
+                            value="<?php echo esc_html($quan->slug); ?>"
+                            <?php checked($isChecked); ?>>
+                      <label for="quan_<?php echo esc_html($quan->slug); ?>">
+                        <?php echo esc_html($quan->name); ?>
+                      </label>
+                    </div>
                   <?php endforeach; ?>
-                  <input type="hidden" id="current-quan-input" name="filter_quan-<?php echo $page->slug; ?>" value="">
+
+                  <!-- Hidden input: name động -->
+                  <input type="hidden"
+                        id="current-quan-input"
+                        name="<?php echo esc_attr($filterQuanKey); ?>"
+                        value="<?php echo esc_attr(implode(',', $selectedQuans)); ?>">
                 </div>
               </div>
             </div>
@@ -59,8 +69,8 @@
 
                   <!-- Thanh slider 2 đầu -->
                   <div class="range-slider">
-                    <input type="range" id="range-min" min="0" max="100" value="0" step="0">
-                    <input type="range" id="range-max" min="0" max="100" value="100" step="0">
+                    <input type="range" id="range-min" min="0" max="100" value="<?php echo isset( $_GET['min_price'] ) ? $_GET['min_price'] : '0'; ?>" step="0">
+                    <input type="range" id="range-max" min="0" max="100" value="<?php echo isset( $_GET['max_price'] ) ? $_GET['max_price'] : '100'; ?>" step="0">
                     <div class="slider-track"></div>
                   </div>
 
@@ -68,11 +78,11 @@
                   <div class="price-inputs-row">
                     <div class="price-input-group">
                       <label>Từ</label>
-                      <input type="number" id="price-min-input" class="price-input" min="0" max="100" value="0">
+                      <input type="number" id="price-min-input" class="price-input" min="0" max="100" value="<?php echo isset( $_GET['min_price'] ) ? $_GET['min_price'] : '0'; ?>">
                     </div>
                     <div class="price-input-group">
                       <label>Đến</label>
-                      <input type="number" id="price-max-input" class="price-input" min="0" max="100" value="100">
+                      <input type="number" id="price-max-input" class="price-input" min="0" max="100" value="<?php echo isset( $_GET['max_price'] ) ? $_GET['max_price'] : '100'; ?>">
                     </div>
                   </div>
 
@@ -82,8 +92,8 @@
                   </div>
                 </div>
 
-                <input type="hidden" id="min_price" name="min_price" value="0">
-                <input type="hidden" id="max_price" name="max_price" value="100">
+                <input type="hidden" id="min_price" name="min_price" value="<?php echo isset( $_GET['min_price'] ) ? $_GET['min_price'] : '0'; ?>">
+                <input type="hidden" id="max_price" name="max_price" value="<?php echo isset( $_GET['max_price'] ) ? $_GET['max_price'] : '100'; ?>">
               </div>
             </div>
           </div>
@@ -93,37 +103,41 @@
         <div class="col large-2 small-12">
           <div class="custom-dropdown-wrapper">
             <div class="dropdown-label">Hạng</div>
-              <div class="custom-dropdown" id="hang-dropdown">
-                <div class="dropdown-display" id="hang-display">
-                  <span class="selected-hang">(0) đã chọn</span>
-                  <i class="fa fa-chevron-down dropdown-arrow"></i>
-                </div>
-                <div class="dropdown-menu" id="hang-menu" style="display:none;">
-                  <!-- NƠI SẼ HIỆN TAG -->
-                  <div class="selected-items" id="selected-hang-items"></div>
+            <div class="custom-dropdown" id="hang-dropdown">
+              <div class="dropdown-display" id="hang-display">
+                <span class="selected-hang">
+                  (<?php echo count($selectedHangs); ?>) đã chọn
+                </span>
+                <i class="fa fa-chevron-down dropdown-arrow"></i>
+              </div>
+              <div class="dropdown-menu" id="hang-menu" style="display:none;">
+                <!-- NƠI SẼ HIỆN TAG -->
+                <div class="selected-items" id="selected-hang-items"></div>
 
-                  <div class="dropdown-options">
-                    <div class="dropdown-option">
-                      <input type="checkbox" id="hang_a" value="hang-a">
-                      <label for="hang_a">Hạng A</label>
+                <div class="dropdown-options">
+                  <?php foreach ($hangs as $hang): ?>
+                    <?php $isChecked = in_array($hang->slug, $selectedHangs, true); ?>
+                    <div class="dropdown-option" data-value="<?php echo esc_html($hang->slug); ?>">
+                      <input type="checkbox"
+                            id="hang_<?php echo esc_html($hang->slug); ?>"
+                            value="<?php echo esc_html($hang->slug); ?>"
+                            <?php checked($isChecked); ?>>
+                      <label for="hang_<?php echo esc_html($hang->slug); ?>">
+                        <?php echo esc_html($hang->name); ?>
+                      </label>
                     </div>
-                    <div class="dropdown-option">
-                      <input type="checkbox" id="hang_b" value="hang-b">
-                      <label for="hang_b">Hạng B</label>
-                    </div>
-                    <div class="dropdown-option">
-                      <input type="checkbox" id="hang_c" value="hang-c">
-                      <label for="hang_c">Hạng C</label>
-                    </div>
+                  <?php endforeach; ?>
 
-                    <!-- Hidden để submit -->
-                    <input type="hidden" id="current-hang-input" name="filter_hang" value="">
-                  </div>
+                  <!-- Hidden input để submit -->
+                  <input type="hidden"
+                        id="current-hang-input"
+                        name="filter_hang"
+                        value="<?php echo esc_attr(implode(',', $selectedHangs)); ?>">
                 </div>
               </div>
+            </div>
           </div>
         </div>
-
 
         <!-- Nút tìm kiếm -->
         <div class="col large-2 small-12">

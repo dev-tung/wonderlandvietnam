@@ -16,7 +16,6 @@
                 <input type="search" id="search-field" class="form-control" name="s" placeholder="Tìm theo tên tòa nhà, tên đường..." value="">
               </div>
               <input type="hidden" name="post_type" value="product">
-              <input type="hidden" name="product_cat" value="<?php echo $page->slug; ?>">
             </div>
           </div>
           <!-- Dropdown Quận -->
