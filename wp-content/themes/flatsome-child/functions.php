@@ -772,3 +772,23 @@ function enqueue_nouislider_assets() {
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_nouislider_assets' );
+
+// Bỏ query string khi so sánh menu active
+add_filter('nav_menu_css_class', function($classes, $item){
+    if (!empty($item->url)) {
+        // URL hiện tại, bỏ query string và hash
+        $current_url = strtok(home_url(add_query_arg([], $_SERVER['REQUEST_URI'])), '?#');
+
+        // URL menu, bỏ query string và hash
+        $menu_url = strtok($item->url, '?#');
+
+        // So sánh
+        if ($current_url === $menu_url) {
+            $classes[] = 'current-menu-item';
+        } else {
+            // Loại bỏ nhầm active trước đó nếu có
+            $classes = array_diff($classes, ['current-menu-item']);
+        }
+    }
+    return $classes;
+}, 10, 2);

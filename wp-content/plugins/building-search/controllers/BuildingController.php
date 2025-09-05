@@ -66,6 +66,18 @@ class BuildingController extends Controller {
             $selectedHangs = array_map('sanitize_text_field', explode(',', $_GET['filter_hang']));
         }
 
+        // Gắn active menu cho result page
+        add_filter('nav_menu_css_class', function($classes, $item) use ($selectedQuans) {
+            if (!empty($selectedQuans)) {
+                foreach ($selectedQuans as $quanSlug) {
+                    if (strpos($item->url, $quanSlug) !== false) {
+                        $classes[] = 'current-menu-item';
+                    }
+                }
+            }
+            return $classes;
+        }, 10, 2);
+
         return $this->render('building-result', [
             'page'          => $page,
             'taxonomy'      => $taxonomy,
