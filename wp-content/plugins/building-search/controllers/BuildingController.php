@@ -18,12 +18,14 @@ class BuildingController extends Controller {
 
     public function buildingsQuan() {
         $page          = $this->model->page();
-        $quans         = $this->model->quans($page->slug);
-        $buildingsQuan = $this->model->buildingsQuan($page->slug, $quans);
+        $taxonomy      = $page->slug; // dùng slug làm taxonomy
+        $quans         = $this->model->quans($taxonomy);
+        $buildingsQuan = $this->model->buildingsQuan($taxonomy, $quans);
 
         return $this->render('building-quan', [
-            'page'  => $page,
-            'quans' => $quans,
+            'page'          => $page,
+            'quans'         => $quans,
+            'taxonomy'      => $taxonomy,
             'buildingsQuan' => $buildingsQuan
         ]);
     }

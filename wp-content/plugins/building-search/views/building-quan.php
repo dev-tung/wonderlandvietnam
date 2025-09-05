@@ -143,16 +143,20 @@
           <div class="row">
             <div class="col SectionBuildingTagList">
               <?php foreach ($quans as $quan) : ?>
-                  <a class="SectionBuildingTag" href="<?php echo esc_html($quan->slug); ?>"><?php echo esc_html($quan->name); ?></a> 
+                <a class="SectionBuildingTag"
+                  href="<?php echo quanLink($taxonomy, $quan->slug); ?>">
+                  <?php echo esc_html($quan->name); ?>
+                </a>
               <?php endforeach; ?>
             </div>
           </div>
+
 
           <?php foreach($buildingsQuan as $item) : ?>
             <?php if (!empty($item['buildings'])) : ?>
               <div class="BuildingQuanHeader">
                 <h4 class="BuildingQuanTitle">Cho thuê văn phòng quận <?php echo esc_html($item['quan']->name); ?></h4>
-                <a class="BuildingQuanLink" href="<?php echo esc_html($item['quan']->slug); ?>" > Xem thêm</a>
+                <a class="BuildingQuanLink" href="<?php echo quanLink($taxonomy, $item['quan']->slug); ?>" > Xem thêm</a>
               </div>
               <div class="row list-building">
                 <?php foreach ($item['buildings'] as $building) : ?>

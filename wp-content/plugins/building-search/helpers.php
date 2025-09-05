@@ -34,3 +34,19 @@ if (!function_exists('taxonomyQuanKey')) {
         return 'pa_quan-' . sanitize_key($taxonomy);
     }
 }
+
+if (!function_exists('quanLink')) {
+    /**
+     * Sinh ra taxonomy pa_quan-{taxonomy}
+     */
+    function quanLink($taxonomy, $slug) {
+        // Key động cho filter_quan
+        $filterQuanKey = filterQuanKey($taxonomy);
+
+        // Gán giá trị quận hiện tại
+        $_GET[$filterQuanKey] = $slug;
+
+        // Tạo URL
+        return add_query_arg($_GET, get_term_link( get_queried_object_id() ));
+    }
+}
